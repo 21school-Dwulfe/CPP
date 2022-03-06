@@ -7,9 +7,12 @@
 //                                                                            //
 // ************************************************************************** //
 
-#include <vector>
-#include <algorithm>
 #include <functional>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <iostream>
 #include "Account.hpp"
 
 int		main( void ) {

@@ -6,7 +6,7 @@
 /*   By: dwulfe <dwulfe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 19:02:47 by dwulfe            #+#    #+#             */
-/*   Updated: 2022/03/05 14:27:51 by dwulfe           ###   ########.fr       */
+/*   Updated: 2022/03/06 14:25:26 by dwulfe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	PhoneBook::PrintContacts()
 	std::cout << "|    |          |          |          |" << std::endl;
 	std::cout << "| id |   NAME   | LASTNAME | NICKNAME |" << std::endl;
 	std::cout << "|____|__________|__________|__________|" << std::endl;
-	std::cout << std::setfill(' ') << std::setw(10);
 	while (i < this->ContactsCount)
 	{
 		std::cout
