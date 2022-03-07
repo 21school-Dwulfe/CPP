@@ -6,7 +6,7 @@ OBJ = Megaphone.o
 .PHONY: all clean fclean re
 
 %.o : %.cpp
-	g++ -Wall -Wextra -Werror -c $< -o $@
+	g++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
 all : ${APP}
 	

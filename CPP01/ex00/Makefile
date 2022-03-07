@@ -1,7 +1,10 @@
-APP = 	Account
+APP = 	Zombie
 
-SRC = 	Account.cpp \
-		tests.cpp
+SRC = 	newZombie.cpp \
+		Zombie.cpp	\
+		randomChump.cpp \
+		main.cpp \
+		
 		
 
 OBJ = 	${SRC:.cpp=.o}

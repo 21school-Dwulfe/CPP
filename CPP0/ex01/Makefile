@@ -9,7 +9,7 @@ OBJ = 	${SRC:.cpp=.o}
 .PHONY: all clean fclean re
 
 %.o : %.cpp
-	g++ -g -Wall -Wextra -Werror -c $< -o $@
+	g++ -g -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
 all : ${APP}
 
