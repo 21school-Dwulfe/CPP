@@ -1,13 +1,7 @@
-APP = 	Zombie
+APP = 	Refences
 
-SRC = 	newZombie.cpp \
-		Zombie.cpp	\
-		randomChump.cpp \
-		zombieHorde.cpp \
-		main.cpp \
+SRC = 	main.cpp 
 		
-		
-
 OBJ = 	${SRC:.cpp=.o}
 
 .PHONY: all clean fclean re
@@ -18,7 +12,7 @@ OBJ = 	${SRC:.cpp=.o}
 all : ${APP}
 
 ${APP} : $(OBJ)
-	c++ -Wall -Wextra -Werror $(OBJ) -o $(APP)
+	c++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(APP)
 
 clean: 
 	rm -rf $(OBJ)

@@ -11,14 +11,25 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <sstream>
 
-Zombie* Zombie::zombieHorde( int N, std::string name )
+template <class T>
+std::string to_string(T param)
+{
+    std::string str = "";
+    std::stringstream ss;
+    ss<<param;
+    getline(ss, str);
+    return str;
+}
+
+Zombie* zombieHorde( int N, std::string name )
 {
     Zombie *arr = new Zombie[N];
 
     for (int i= 0; i < N; i++)
     {
-        arr[i].SetName(name + " " + std::to_string(i));
+        arr[i].SetName(name + " " + to_string(i));
     }
     return (arr);
 }

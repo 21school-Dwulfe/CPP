@@ -17,7 +17,7 @@ OBJ = 	${SRC:.cpp=.o}
 all : ${APP}
 
 ${APP} : $(OBJ)
-	c++ -Wall -Wextra -Werror $(OBJ) -o $(APP)
+	c++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(APP)
 
 clean: 
 	rm -rf $(OBJ)

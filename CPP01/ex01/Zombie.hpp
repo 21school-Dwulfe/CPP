@@ -26,10 +26,7 @@ class Zombie
         {
             std::cout << this->Name << ": "<< "BraiiiiiiinnnzzzZ..."<< std::endl;
         };
-        Zombie   *newZombie(std::string name);
-        void    randomChump(std::string name) const;
         void    SetName(std::string name);
-        static  Zombie* zombieHorde( int N, std::string name );
 
     private :
         std::string Name;

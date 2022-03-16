@@ -12,11 +12,15 @@
 
 #include "Zombie.hpp"
 
+Zombie   *newZombie(std::string name);
+void    randomChump(std::string name);
+Zombie* zombieHorde( int N, std::string name );
+
 int main(void)
 {
-    Zombie *party = Zombie::zombieHorde(666, "Unknown zombie");
+    Zombie *party = zombieHorde(66, "Unknown zombie");
 
-    for (int i = 0; i < 666 ; i ++)
+    for (int i = 0; i < 66 ; i ++)
     {
         party[i].announce();
     }
