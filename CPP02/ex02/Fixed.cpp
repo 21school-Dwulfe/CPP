@@ -65,7 +65,7 @@ Fixed&   Fixed::operator++(void)
 Fixed   Fixed::operator++(int) 
 {
     Fixed tmp = *this;
-    _fixedPointNum +=1;
+    operator++();
     return (tmp);
 }
 
@@ -88,7 +88,7 @@ Fixed&   Fixed::operator--(void)
 Fixed   Fixed::operator--(int) 
 {
     Fixed tmp = *this;
-    _fixedPointNum -=1;
+    operator--();
     return (tmp);
 }
 

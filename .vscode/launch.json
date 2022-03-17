@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/CPP01/ex04/Sed",
+            "program": "${workspaceFolder}/CPP03/ex03/DiamondTrap",
             "args": ["filenaeme", "e", " u"],
             "cwd": "${workspaceFolder}"
         }
