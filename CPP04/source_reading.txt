@@ -1,0 +1,2 @@
+C++ Public, Protected and Private Inheritance - https://www.programiz.com/cpp-programming/public-protected-private-inheritance
+Shallow Copy and Deep Copy in C++ - https://www-geeksforgeeks-org.translate.goog/shallow-copy-and-deep-copy-in-c/?_x_tr_sl=auto&_x_tr_tl=ru&_x_tr_hl=ru
