@@ -1,0 +1,43 @@
+#ifndef FORM_HPP
+#define FORM_HPP
+
+#include <iostream>
+#include <sstream>
+
+class Bureaucrat;
+
+class Form
+{
+    const std::string   _name;
+    bool                _isSigned;
+    const int           _requireGrade;
+    const int           _requireExec;
+    Form& operator=(const Form& form);
+    Form (const Form& form);
+
+    public:
+        Form();
+        Form(const std::string name, const int requireGrade, const int requireExec);
+        virtual ~Form();
+        const std::string&  getName() const;
+        int                 getRequiredExec() const;
+        int                 getRequiredGrade() const;
+        bool                getIsSigned() const;
+        void                beSigned(const Bureaucrat& bureaucrat);
+        virtual int         execute(const Bureaucrat& executor) const = 0;
+        class GradeTooLowExeption : public std::exception
+        {
+            public:
+               virtual const char* what() const throw ();
+        };
+        class GradeTooHighExeption : public std::exception
+        {
+            public:
+               virtual const char* what() const throw ();
+        };
+
+};
+
+std::ostream& operator<< (std::ostream& out, Form& form);
+
+#endif
