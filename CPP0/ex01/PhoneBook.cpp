@@ -11,6 +11,18 @@
 /* ************************************************************************** */
 
 #include "main.hpp"
+#include <sstream>
+#include <cstdlib>
+
+template <class T>
+std::string to_string(T param)
+{
+    std::string str = "";
+    std::stringstream ss;
+    ss<<param;
+    getline(ss, str);
+    return str;
+}
 
 std::string truncate(std::string str);
 
@@ -31,7 +43,7 @@ void	PhoneBook::PrintContacts()
 	{
 		std::cout
 			<< "|    |          |          |          |" << std::endl
-			<< "| " << std::to_string(i) << "  |"
+			<< "| " << to_string(i) << "  |"
 			<< truncate(this->contacts[i].GetName())
 			<< "|"
 			<< truncate(this->contacts[i].GetLastName())
@@ -96,13 +108,25 @@ int	PhoneBook::SearchContact()
 {
 	int			id;
 	std::string	id_s;
-	size_t		pos;
 
 	this->PrintContacts();
 	std::cout << "Please, enter id" << std::endl;
 	if (!std::getline(std::cin, id_s))
 		return (1);
-	id = std::stoi(id_s, &pos, 10);
+	int i = 0;
+	while (i < (int)id_s.length())
+	{
+	 	if (!isdigit(id_s[i]))
+		{
+			std::cout << "Please, enter the digit" << std::endl;
+			i = 0;
+			if (!std::getline(std::cin, id_s))
+				return (1);
+			continue;
+		}
+		i++;
+	}
+	id = to_int(id_s.c_str(), id_s.length());
 	if (id >= this->ContactsCount || id < 0)
 		std::cout << "Error! Id is out of range" << std::endl;
 	else

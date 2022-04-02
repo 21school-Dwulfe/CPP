@@ -6,7 +6,7 @@
 class   HumanA
 {
     std::string name;
-    Weapon      &weapon;
+    Weapon      &_weapon;
 
     public:
         HumanA(std::string name, Weapon &weapon);
@@ -15,8 +15,10 @@ class   HumanA
         void    attack()
         {
             std::cout << this->name << " attack with their "
-                    << this->weapon.getType() << std::endl;
+                    << this->_weapon.getType() << std::endl;
         };
+        Weapon& getWeapon()const;
+        void    setWeapon(Weapon& weapon);
 };
 
 #endif

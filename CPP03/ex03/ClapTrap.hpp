@@ -1,6 +1,10 @@
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
+
+#ifndef _IOSTREAM_
+#define _IOSTREAM_
 #include <iostream>
+#endif
 
 class ClapTrap
 {

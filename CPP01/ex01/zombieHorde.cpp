@@ -19,7 +19,7 @@ std::string to_string(T param)
     std::string str = "";
     std::stringstream ss;
     ss<<param;
-    getline(ss, str);
+    std::getline(ss, str);
     return str;
 }
 

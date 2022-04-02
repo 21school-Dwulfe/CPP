@@ -15,18 +15,22 @@ int main(void)
     soldierBill.setAttackDamage(2);
 
     soldierIvan.attack(soldierBill.getName());
-    soldierBill.takeDamage(soldierIvan.getAttackDamage());
+    soldierBill.takeDamage(
+        static_cast<unsigned int>(soldierIvan.getAttackDamage()));
     soldierBill.beRepaired(3);
-    soldierIvan.takeDamage(soldierBill.getAttackDamage());
+    soldierIvan.takeDamage(
+        static_cast<unsigned int>(soldierBill.getAttackDamage()));
     soldierIvan.beRepaired(3);
     buratino.attack(soldierBill.getName());
     soldierBill.takeDamage(100);
-    soldierBill.beRepaired(soldierBill.getEnergypoints());
+    soldierBill.beRepaired(
+        static_cast<unsigned int>(soldierBill.getEnergypoints()));
     soldierBill.attack(soldierIvan.getName());
 
     soldierIvan.attack(soldierBill.getName());
     soldierBill.beRepaired(3);
-    soldierBill.takeDamage(soldierIvan.getAttackDamage());
+    soldierBill.takeDamage(
+        static_cast<unsigned int>(soldierIvan.getAttackDamage()));
 
     soldierIvan.guardGate();
     soldierBill.highFivesGuys();

@@ -19,4 +19,9 @@
 #include "Contact.class.hpp"
 #include "PhoneBook.class.hpp"
 
+int to_int(char const *s, size_t count);
+
+template <class T>
+std::string to_string(T param);
+
 #endif

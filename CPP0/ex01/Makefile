@@ -9,12 +9,12 @@ OBJ = 	${SRC:.cpp=.o}
 .PHONY: all clean fclean re
 
 %.o : %.cpp
-	g++ -g -Wall -Wextra -Werror -std=c++98 -c $< -o $@
+	c++ -g -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
 all : ${APP}
 
 ${APP} : $(OBJ)
-	g++ -Wall -Wextra -Werror $(OBJ) -o $(APP)
+	c++ -Wall -Wextra -Werror $(OBJ) -o $(APP)
 
 clean: 
 	rm -rf $(OBJ)

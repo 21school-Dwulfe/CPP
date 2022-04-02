@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "main.hpp"
+#include <sstream>
 
 std::string truncate(std::string str)
 {
@@ -22,6 +23,25 @@ std::string truncate(std::string str)
     else if (len < 10)
 		return (str.append(10 - len, ' '));
 	return (str);
+}
+
+int to_int(char const *s, size_t count)
+{
+     size_t i = 0 ;
+     if ( s[0] == '+' || s[0] == '-' ) 
+          ++i;
+     int result = 0;
+     while(i < count)
+     {
+          if ( s[i] >= '0' && s[i] <= '9' )
+          {
+              result = result * 10  - (s[i] - '0');  
+          }
+          else
+              throw std::invalid_argument("invalid input string");
+          i++;
+     }
+     return s[0] == '-' ? result : -result; 
 }
 
 int main(void)

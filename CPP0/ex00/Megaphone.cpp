@@ -1,4 +1,5 @@
  #include <iostream>
+ #include <cctype>
 
 class Megaphone
 {
@@ -21,8 +22,12 @@ void	Megaphone::default_speech()
 
 void    Megaphone::repeat_loudly(std::string speech, bool is_last)
 {
-	std::transform(speech.begin(), speech.end(), speech.begin(), ::toupper);
-	std::cout << speech + " ";
+	std::string copy(speech);
+	for (int i = 0; i < (int)speech.length(); i++)
+	{
+		copy[i] = toupper(speech[i]);
+	}
+	std::cout << copy + " ";
 	if (is_last)
 		std::cout << std::endl;
 }
