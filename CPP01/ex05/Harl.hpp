@@ -2,7 +2,7 @@
 #define KAREN_HPP
 #include <iostream>
 
-class Karen
+class Harl
 {
     void    debug(void)
     {
@@ -21,10 +21,10 @@ class Karen
         std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
     };
     std::string indexes[4];
-    void (Karen::*lev[4])();
+    void (Harl::*lev[4])();
     public:
-        Karen();
-        ~Karen();
+        Harl();
+        ~Harl();
         void complain(std::string level);
 };
 

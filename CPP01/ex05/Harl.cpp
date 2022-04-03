@@ -1,25 +1,25 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen()
+Harl::Harl()
 {
 
-   this->lev[0] = &Karen::debug;
-   this->lev[1] = &Karen::info;
-   this->lev[2] = &Karen::warning;
-   this->lev[3] = &Karen::error;
+   this->lev[0] = &Harl::debug;
+   this->lev[1] = &Harl::info;
+   this->lev[2] = &Harl::warning;
+   this->lev[3] = &Harl::error;
    this->indexes[0] = "DEBUG";
    this->indexes[1] = "INFO";
    this->indexes[2] = "WARNING";
    this->indexes[3] = "ERROR";
 }
 
-Karen::~Karen(){}
+Harl::~Harl(){}
 
-void    Karen::complain(std::string level)
+void    Harl::complain(std::string level)
 {
     if (!level.empty())
     {
-        int index;
+        int index = 0;
         for (int i = 0; i < 4; i++)
         {
             if (level == this->indexes[i])

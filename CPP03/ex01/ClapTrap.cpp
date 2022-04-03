@@ -87,7 +87,6 @@ void            ClapTrap::beRepaired(unsigned int amount)
     if (this->_hitpoints <= 0)
     {
         std::cout << this->_name << " is already dead." << " Cannot be repaired or healed" <<std::endl;
-
         return ;
     }
     unsigned int i = 0;

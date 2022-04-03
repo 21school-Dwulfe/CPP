@@ -1,9 +1,6 @@
-APP = Harl
+APP = Sed
 
-SRC = main.cpp \
-		Harl.cpp
-
-INCLUDE = Harl.hpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -14,7 +11,7 @@ all : $(APP)
 %.o: %.cpp
 	c++ -g -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
-$(APP) : $(INCLUDE) $(OBJ)
+$(APP) : $(OBJ)
 	c++ -Wall -Wextra -Werror -g -fsanitize=address -std=c++98 $(OBJ) -o $@ 
 
 re : fclean all

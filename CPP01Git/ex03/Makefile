@@ -1,9 +1,13 @@
-APP = Harl
+APP = Weapon
 
-SRC = main.cpp \
-		Harl.cpp
+SRC = Weapon.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
+	main.cpp
 
-INCLUDE = Harl.hpp
+INCLUDE = weapon.hpp \
+			HumanA.hpp \
+			HumanB.hpp \
 
 OBJ = $(SRC:.cpp=.o)
 

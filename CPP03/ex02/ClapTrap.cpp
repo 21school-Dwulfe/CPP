@@ -14,7 +14,7 @@ ClapTrap::ClapTrap(std::string name): _name(name)
     _hitpoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
-    std::cout << "Constructor " << _name <<" called" << std::endl;
+    std::cout << "ClapTrap Constructor " << _name <<" called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &clapTrap)
@@ -38,7 +38,7 @@ ClapTrap & ClapTrap::operator= (const ClapTrap &clapTrap)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor " << _name <<" called" << std::endl;
+    std::cout << "ClapTrap Destructor " << _name <<" called" << std::endl;
 }
 
 void            ClapTrap::attack(const std::string& target)

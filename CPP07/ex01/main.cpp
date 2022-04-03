@@ -33,6 +33,11 @@ int main(void)
     std::string s(str);
     std::basic_string<char> ch(s);
 
+    for (std::string::iterator i = s.begin() ; i != s.end(); i++)
+    {
+        ::iter<std::string::iterator>(&i, 1, toUpper);
+    }
+    
     std::cout << ch << std::endl;
     strcpy(str, "russia");
     int num[] = {1, 2, 3};

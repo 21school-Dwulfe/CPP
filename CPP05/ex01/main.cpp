@@ -7,7 +7,7 @@ int main(void)
     {
         Bureaucrat vano("Vano", 150);
         Bureaucrat victor("Victor", 150);
-        Form d = Form("Act", 148, 150);
+        Form d = Form("Act", 148, 148);
         vano.signForm(d);
         vano.increase();
         vano.increase();

@@ -1,11 +1,11 @@
-APP = Harl
+APP = Fixed
 
 SRC = main.cpp \
-		Harl.cpp
-
-INCLUDE = Harl.hpp
+		Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
+
+INCLUDE = Fixed.hpp
 
 .PHONY : all re fclean clean
 
@@ -14,7 +14,7 @@ all : $(APP)
 %.o: %.cpp
 	c++ -g -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
-$(APP) : $(INCLUDE) $(OBJ)
+$(APP) : $(INCLUDE) $(OBJ) 
 	c++ -Wall -Wextra -Werror -g -fsanitize=address -std=c++98 $(OBJ) -o $@ 
 
 re : fclean all
