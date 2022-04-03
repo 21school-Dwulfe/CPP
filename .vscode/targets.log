@@ -7,11 +7,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `all'
-.  Stop.
 
-
-# Make data base, printed on Sun Apr  3 16:14:17 2022
+# Make data base, printed on Sun Apr  3 22:04:13 2022
 
 # Variables
 
@@ -19,6 +16,10 @@ make: *** No rule to make target `all'
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# makefile (from `Makefile', line 10)
+OBJ = $(SRC:.cpp=.o)
+# makefile (from `Makefile', line 4)
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -35,16 +36,16 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile
-MAKEFILE_LIST := 
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001x4w000g97/T/vscode-ipc-149b541b-df8b-4e8e-912b-7d9f4c33b530.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001x4w000g97/T/vscode-ipc-d0f6ad8c-6785-4657-89af-ab05608fb410.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.wOLWBtflJp/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.dng6H5WQRA/Render
 # environment
 PATH = /Users/dwulfe/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/usr/local/munki:/opt/X11/bin:~/.dotnet/tools
 # environment
@@ -54,13 +55,13 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.96dkNZ3nJX/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.5jSUkdnMyu/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 HOMEBREW_TEMP = /tmp/dwulfe/Homebrew/Temp
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.HLjUvS4Wjz/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.4J1H7kBkZs/org.xquartz:0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -98,11 +99,15 @@ MAKE_VERSION := 3.81
 # environment
 USER = dwulfe
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := fixed
+# makefile (from `Makefile', line 1)
+NAME = fixed
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 14)
+INC = Fixed.hpp Point.hpp
 # default
 .VARIABLES := 
 # environment
@@ -118,9 +123,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x1000000b.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000004.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 12)
+CLANG_FLAGS = -Wall -Wextra -Werror -std=c++98
 # automatic
 +F = $(notdir $+)
 # environment
@@ -134,7 +141,7 @@ MAKEFILES :=
 # environment
 LC_ALL = C
 # environment
-SECURITYSESSIONID = 186df
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -146,9 +153,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1865
+VSCODE_PID = 15858
 # variable set hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=1/87=1%
+# Load=71/1024=7%, Rehash=0, Collisions=3/103=3%
 
 # Pattern-specific Variable Values
 
@@ -156,22 +163,48 @@ VSCODE_PID = 1865
 
 # Directories
 
-# . (device 16777232, inode 1255103): 16 files, no impossibilities.
+# . (device 16777232, inode 1255103): 29 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 29 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+%.o: %.cpp
+#  commands to execute (from `Makefile', line 18):
+	clang++ $(CLANG_FLAGS) -c $< -o $(<:.cpp=.o)
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
 # Not a target:
-all:
-#  Command-line target.
-#  Implicit rule search has been done.
-#  File does not exist.
+Point.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
+
+all: fixed
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Fixed.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-03 16:43:40
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -183,21 +216,55 @@ all:
 
 # Not a target:
 Makefile:
-#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-04-03 16:43:40
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+Point.o: Point.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `Point'
+#  Last modified 2022-04-03 16:43:40
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 18):
+	clang++ $(CLANG_FLAGS) -c $< -o $(<:.cpp=.o)
+	
+
+# Not a target:
+main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-03 16:43:40
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-makefile:
-#  A default, MAKEFILES, or -include/sinclude makefile.
-#  Implicit rule search has been done.
+Fixed.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 29):
+	rm -rf $(NAME)
+	
+
+# Not a target:
+bsp.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-03 17:38:51
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -207,29 +274,107 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-GNUmakefile:
-#  A default, MAKEFILES, or -include/sinclude makefile.
-#  Implicit rule search has been done.
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has not been updated.
+
+fixed: main.o Fixed.o Point.o bsp.o Fixed.hpp Point.hpp
+#  Implicit rule search has not been done.
+#  Last modified 2022-04-03 16:43:40
 #  File has been updated.
-#  Failed to be updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+#  commands to execute (from `Makefile', line 21):
+	clang++ $(CLANG_FLAGS) $(OBJ) -o $(NAME) -I Fixed.hpp -I Point.hpp
+	
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 26):
+	rm -rf $(OBJ)
+	
+
+Fixed.o: Fixed.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `Fixed'
+#  Last modified 2022-04-03 16:43:40
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 18):
+	clang++ $(CLANG_FLAGS) -c $< -o $(<:.cpp=.o)
+	
+
+main.o: main.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `main'
+#  Last modified 2022-04-03 16:43:40
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 18):
+ 
+	clang++ $(CLANG_FLAGS) -c $< -o $(<:.cpp=.o)
+	
+
+# Not a target:
+Point.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-03 16:43:40
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+bsp.o: bsp.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `bsp'
+#  Last modified 2022-04-03 16:43:40
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := bsp.o
+# automatic
+# % := 
+# automatic
+# * := bsp
+# automatic
+# + := bsp.cpp
+# automatic
+# | := 
+# automatic
+# < := bsp.cpp
+# automatic
+# ^ := bsp.cpp
+# automatic
+# ? := bsp.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  commands to execute (from `Makefile', line 18):
+	clang++ $(CLANG_FLAGS) -c $< -o $(<:.cpp=.o)
+	
+
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
+# Load=19/1024=2%, Rehash=0, Collisions=0/58=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 0
-# # of strcache buffers: 0
-# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
-# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Apr  3 16:14:17 2022
+# Finished Make data base on Sun Apr  3 22:04:13 2022
 
  

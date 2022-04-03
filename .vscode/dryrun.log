@@ -1,6 +1,9 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/dwulfe/CPPNEW'
+clang++ -Wall -Wextra -Werror -std=c++98 -c main.cpp -o main.o
+clang++ -Wall -Wextra -Werror -std=c++98 -c Fixed.cpp -o Fixed.o
+clang++ -Wall -Wextra -Werror -std=c++98 -c Point.cpp -o Point.o
+clang++ -Wall -Wextra -Werror -std=c++98 -c bsp.cpp -o bsp.o
+clang++ -Wall -Wextra -Werror -std=c++98 main.o Fixed.o Point.o bsp.o -o fixed -I Fixed.hpp -I Point.hpp
 make: Leaving directory `/Users/dwulfe/CPPNEW'
  
-make: *** No targets specified and no makefile found.  Stop.
-

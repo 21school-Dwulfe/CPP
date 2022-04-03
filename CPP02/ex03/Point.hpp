@@ -10,7 +10,7 @@ private:
     const Fixed *_y;
 public:
     Point(void);
-    Point(const Fixed* x, const Fixed* y);
+    Point(const float x, const float y);
     Point(const Point& point);
     ~Point();
 
